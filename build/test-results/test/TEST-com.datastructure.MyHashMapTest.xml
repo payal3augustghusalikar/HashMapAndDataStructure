@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.datastructure.MyHashMapTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-12-07T11:19:31" hostname="DESKTOP-S0RN8B8" time="0.001">
+  <properties/>
+  <testcase name="givenASentence_WhenWordsAreAddedToList_ShouldReturnWordFrequency" classname="com.datastructure.MyHashMapTest" time="0.001"/>
+  <system-out><![CDATA[
+ ******* welcome to Data structure ********
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
