@@ -2,7 +2,7 @@ package com.datastructure;
 
 import java.security.Key;
 
-public class MyLinkedList {
+public class MyLinkedList<K> {
 
     public INode head;
     public INode tail;
@@ -12,9 +12,11 @@ public class MyLinkedList {
         this.tail = null;
     }
 
-    public void add(INode newNode) {
+    public void add(INode newNode) { // Use Case 2
+
         if (this.tail == null) {
             this.tail = newNode;
+
         }
         if (this.head == null) {
             this.head = newNode;
@@ -24,19 +26,8 @@ public class MyLinkedList {
             this.head.setNext(tempNode);
         }
     }
-    public INode search(INode searchKey) {
 
-        INode tempNode = this.head;
-        while (tempNode != null) {
-            if (tempNode == searchKey) {
-                return tempNode;
-            }
-            tempNode = tempNode.getNext();
-        }
-        return null;
-    }
-
-    public <K> void append(INode<K> myNode) {
+    public void append(INode<K> myNode) {
         if (this.head == null) {
             this.head = myNode;
         }
@@ -48,10 +39,16 @@ public class MyLinkedList {
         }
     }
 
+    public INode<K> search(K key) {
 
-
-    public void printMyNodes() {
-        System.out.println("My Nodes: "+head);
+        INode<K> tempNode = head;
+        while (tempNode != null && tempNode.getNext() != null) {
+            if (tempNode.getKey().equals(key)) {
+                return tempNode;
+            }
+            tempNode = tempNode.getNext();
+        }
+        return null;
     }
 
     public String toString() {
