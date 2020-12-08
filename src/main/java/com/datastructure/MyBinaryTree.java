@@ -1,7 +1,9 @@
 package com.datastructure;
 
-public class MyBinaryTree <K extends Comparable<K>> {
-     MyBinaryNode<K> root;
+import org.w3c.dom.Node;
+
+public class MyBinaryTree<K extends Comparable<K>> {
+    MyBinaryNode<K> root;
 
 
     public void add(K key) {
@@ -29,6 +31,30 @@ public class MyBinaryTree <K extends Comparable<K>> {
     private int getSizeRecursive(MyBinaryNode<K> current) {
         return current == null ? 0 : 1 + this.getSizeRecursive(current.left)
                 + this.getSizeRecursive(current.right);
+    }
+
+
+    public MyBinaryNode<K> SearchRecursively(MyBinaryNode<K> current, K key) {
+
+        if (current == null) {
+            return null;
+        }
+        int compareResult = key.compareTo(current.key);
+
+        if (compareResult == 0) {
+            return current;
+        } else if (compareResult < 0) {
+            return SearchRecursively(current.left, key);
+        } else {
+            return SearchRecursively(current.right, key);
+        }
+    }
+
+    public boolean search(K key) {
+        if (SearchRecursively(root, key) != null) {
+            return true;
+        }
+        return false;
     }
 }
 
