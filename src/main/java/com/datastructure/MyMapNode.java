@@ -15,17 +15,14 @@ public class MyMapNode<K, V> implements INode<K> {
 
     @Override
     public K getKey() {
-
         return key;
     }
 
     public V getValue() {
-
         return value;
     }
 
     public void setValue(V value) {
-
         this.value = value;
     }
 
@@ -36,13 +33,11 @@ public class MyMapNode<K, V> implements INode<K> {
 
     @Override
     public INode getNext() {
-
         return next;
     }
 
     @Override
     public void setNext(INode<K> next) {
-
         this.next = (MyMapNode<K, V>) next;
     }
 

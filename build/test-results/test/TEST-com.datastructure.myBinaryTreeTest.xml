@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.datastructure.myBinaryTreeTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-12-08T14:07:28" hostname="DESKTOP-S0RN8B8" time="0.009">
-  <properties/>
-  <testcase name="given3Numbers_WhenAddedToBinaryTree_ShouldReturnSizeThree" classname="com.datastructure.myBinaryTreeTest" time="0.009"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
