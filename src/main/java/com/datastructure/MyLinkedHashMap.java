@@ -2,15 +2,15 @@ package com.datastructure;
 
 import java.util.ArrayList;
 
-    public class MyLinkedHashMap<K, V> {
-        private final int numBuckets;
-        ArrayList<MyLinkedList> myBucketArray;
+public class MyLinkedHashMap<K, V> {
+    private final int numBuckets;
+    ArrayList<MyLinkedList> myBucketArray;
 
-        private int getBucketIndex(K key) {
-            int hashCode = Math.abs(key.hashCode());
-            int index = hashCode % numBuckets;
-            return index;
-        }
+    private int getBucketIndex(K key) {
+        int hashCode = Math.abs(key.hashCode());
+        int index = hashCode % numBuckets;
+        return index;
+    }
 
     public MyLinkedHashMap() {
         this.numBuckets = 10;
@@ -40,6 +40,24 @@ import java.util.ArrayList;
             myLinkedList.append(myMapNode);
         } else {
             myMapNode.setValue(value);
+        }
+    }
+
+    public boolean removeWordFromPhrase(K key) {
+
+        int index = this.getBucketIndex(key);
+
+        MyLinkedList<K> linkedList = this.myBucketArray.get(index);
+        if (linkedList == null) {
+            return false;
+        }
+        MyMapNode<K, V> myMapNode = (MyMapNode<K, V>) linkedList.search(key);
+
+        if (myMapNode == null) {
+            return false;
+        } else {
+            linkedList.removeWordFromPhrase(myMapNode);
+            return (myMapNode.getKey().equals(key));
         }
     }
 
