@@ -12,7 +12,7 @@ public class MyLinkedList<K> {
         this.tail = null;
     }
 
-    public void add(INode newNode) { // Use Case 2
+    public void add(INode newNode) {
 
         if (this.tail == null) {
             this.tail = newNode;
@@ -50,6 +50,21 @@ public class MyLinkedList<K> {
         }
         return null;
     }
+
+    public INode<K> removeWordFromPhrase(INode<K> node) {
+
+        INode<K> removeNode = search(node.getKey());
+        if (removeNode != null) {
+            INode<K> tempNode = this.head;
+            while (tempNode.getNext() != removeNode) {
+                tempNode = tempNode.getNext();
+            }
+            tempNode.setNext(removeNode.getNext());
+            return removeNode;
+        } else
+            return null;
+    }
+
 
     public String toString() {
         return "myLinkedListNodes { " + head + " }";
